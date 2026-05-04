@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Norm mark">
+  <rect width="64" height="64" rx="12" fill="#211E17"></rect>
+  <text x="32" y="46" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-weight="400" font-size="44" fill="#FBF7F1" letter-spacing="-1">N</text>
+  <circle cx="49" cy="42" r="3" fill="#5F6E48"></circle>
+</svg>

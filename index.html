@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Norm — Capital for the buildings people live in.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./colors_and_type.css">
+<link rel="icon" href="./assets/logo-mark.svg">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  /* ───── Header ───── */
+  .header { position: sticky; top: 0; z-index: 10; background: rgba(251,247,241,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-subtle); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .header nav { display: flex; gap: 32px; align-items: center; }
+  .header nav a { color: var(--ink-200); text-decoration: none; font-size: 14px; font-weight: 500; }
+  .header nav a:hover { color: var(--ink-400); }
+  .header .actions { display: flex; gap: 8px; align-items: center; }
+  .header img { height: 28px; }
+
+  /* ───── Buttons (shared) ───── */
+  .btn { font-family: var(--font-sans); font-size: 14px; font-weight: 500; padding: 10px 18px; border-radius: 6px; border: 1px solid transparent; cursor: pointer; transition: all 120ms var(--ease-out); display: inline-flex; align-items:center; gap: 8px; text-decoration: none; }
+  .btn-primary { background: var(--sage-400); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.12); }
+  .btn-primary:hover { background: var(--sage-500); }
+  .btn-secondary { background: var(--bg-elevated); color: var(--ink-300); border-color: var(--border); box-shadow: var(--shadow-xs); }
+  .btn-secondary:hover { background: var(--bg-panel); border-color: var(--border-strong); }
+  .btn-ghost { background: transparent; color: var(--ink-300); }
+  .btn-ghost:hover { background: var(--cream-200); }
+  .btn-lg { font-size: 15px; padding: 14px 22px; }
+
+  /* ───── Hero ───── */
+  .hero { padding: 80px 0 96px; }
+  .hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+  .eyebrow { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-subtle); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--font-display); font-weight: 400; font-size: 64px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink-400); margin: 0 0 24px; text-wrap: balance; font-variation-settings: "opsz" 60; }
+  .hero h1 em { font-style: italic; color: var(--sage-400); font-weight: 400; }
+  .hero .lede { font-family: var(--font-sans); font-size: 19px; line-height: 1.55; color: var(--ink-100); margin: 0 0 32px; max-width: 52ch; }
+  .hero-actions { display: flex; gap: 12px; align-items: center; }
+  .hero-illust { background: var(--cream-100); border-radius: 14px; padding: 24px; border: 1px solid var(--border-subtle); }
+  .hero-illust img { width: 100%; display: block; border-radius: 8px; }
+
+  /* ───── Quiet stat strip ───── */
+  .stats { border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 32px 0; }
+  .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .stat .label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-subtle); margin-bottom: 8px; }
+  .stat .val { font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1; color: var(--ink-400); letter-spacing: -0.01em; }
+  .stat .sub { font-size: 13px; color: var(--fg-muted); margin-top: 6px; }
+
+  /* ───── Section ───── */
+  section.s { padding: 96px 0; }
+  section.s-cream { background: var(--cream-100); }
+  .section-head { max-width: 720px; margin-bottom: 48px; }
+  .section-head h2 { font-family: var(--font-display); font-weight: 400; font-size: 42px; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink-400); margin: 8px 0 16px; }
+  .section-head p { font-size: 17px; line-height: 1.6; color: var(--ink-100); margin: 0; max-width: 60ch; }
+
+  /* ───── How it works ───── */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .step { background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 28px; }
+  .step .num { font-family: var(--font-display); font-weight: 400; font-size: 32px; color: var(--sage-400); line-height: 1; margin-bottom: 16px; font-variation-settings: "opsz" 32; }
+  .step h3 { font-size: 18px; font-weight: 500; color: var(--ink-400); margin: 0 0 8px; }
+  .step p { font-size: 14px; line-height: 1.6; color: var(--ink-100); margin: 0; }
+
+  /* ───── Deal table ───── */
+  .deal-table { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .deal-table table { width: 100%; border-collapse: collapse; }
+  .deal-table th { text-align: left; padding: 14px 20px; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-subtle); border-bottom: 1px solid var(--border); background: var(--cream-50); }
+  .deal-table td { padding: 18px 20px; font-size: 14px; color: var(--ink-300); border-bottom: 1px solid var(--border-subtle); }
+  .deal-table tbody tr:last-child td { border-bottom: 0; }
+  .deal-table .num { font-family: var(--font-mono); font-size: 13px; text-align: right; }
+  .deal-table th.num { text-align: right; }
+  .badge { display:inline-flex; align-items:center; gap:6px; font-size: 12px; font-weight: 500; padding: 3px 9px; border-radius: 999px; background: var(--sage-50); color: var(--sage-500); }
+  .badge .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .badge.pending { background: var(--blue-50); color: var(--blue-400); }
+
+  /* ───── Quote ───── */
+  .quote { background: var(--ink-300); color: var(--cream-50); padding: 96px 0; }
+  .quote blockquote { font-family: var(--font-display); font-weight: 300; font-size: 38px; line-height: 1.3; letter-spacing: -0.01em; margin: 0; max-width: 900px; text-wrap: balance; font-variation-settings: "opsz" 36; font-style: italic; }
+  .quote cite { display: block; font-style: normal; font-family: var(--font-sans); font-size: 14px; color: var(--cream-300); margin-top: 32px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* ───── FAQ ───── */
+  .faq { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 880px; margin: 0 auto; }
+  details { padding: 24px 0; border-top: 1px solid var(--border); }
+  details:last-child { border-bottom: 1px solid var(--border); }
+  summary { font-size: 18px; font-weight: 500; color: var(--ink-400); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-family: var(--font-display); font-size: 24px; color: var(--sage-400); font-weight: 300; }
+  details[open] summary::after { content: "−"; }
+  details p { font-size: 15px; line-height: 1.65; color: var(--ink-100); margin: 16px 0 0; max-width: 70ch; }
+
+  /* ───── CTA ───── */
+  .cta { padding: 96px 0; text-align: left; }
+  .cta-inner { background: var(--cream-100); border: 1px solid var(--border); border-radius: 14px; padding: 64px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+  .cta h2 { font-family: var(--font-display); font-weight: 400; font-size: 42px; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink-400); margin: 0 0 16px; }
+  .cta p { color: var(--ink-100); font-size: 17px; line-height: 1.6; margin: 0 0 24px; }
+  .cta-form { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+  .cta-form label { font-size: 13px; font-weight: 500; color: var(--ink-200); display: block; margin-bottom: 6px; }
+  .cta-form input, .cta-form select { font-family: var(--font-sans); font-size: 14px; color: var(--ink-300); background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; width: 100%; outline: none; }
+  .cta-form input:focus, .cta-form select:focus { border-color: var(--sage-400); box-shadow: 0 0 0 3px rgba(95,110,72,0.15); }
+  .cta-form .field { margin-bottom: 14px; }
+  .cta-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cta-form button { width: 100%; margin-top: 6px; justify-content: center; }
+
+  /* ───── Footer ───── */
+  footer { background: var(--ink-300); color: var(--cream-100); padding: 64px 0 32px; }
+  footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  footer h4 { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cream-300); margin: 0 0 16px; }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer li { margin-bottom: 10px; }
+  footer a { color: var(--cream-100); text-decoration: none; font-size: 14px; }
+  footer a:hover { color: #fff; }
+  footer .brand p { color: var(--cream-300); font-size: 13px; line-height: 1.6; margin: 12px 0 0; max-width: 32ch; }
+  footer .legal { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(251,247,241,0.12); display: flex; justify-content: space-between; font-size: 12px; color: var(--cream-300); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="#"><img src="./assets/logo-wordmark.svg" alt="Norm"></a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#example">Example loan</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-ghost" href="#">Sign in</a>
+      <a class="btn btn-primary" href="#cta">Talk to us</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow">Specialty private credit</div>
+      <h1>Capital for the <em>buildings people live in.</em></h1>
+      <p class="lede">Norm finances the repairs that condominium associations can't write a check for — a new roof, a façade restoration, a boiler replacement — so residents pay over time instead of a one-time special assessment.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn btn-primary btn-lg">Tell us about your project</a>
+        <a href="#how" class="btn btn-secondary btn-lg">How it works</a>
+      </div>
+    </div>
+    <div class="hero-illust">
+      <img src="./assets/illustration-building.svg" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-inner">
+    <div class="stat"><div class="label">Loan size</div><div class="val">$25K – $250K</div><div class="sub">Small-balance, secured.</div></div>
+    <div class="stat"><div class="label">Typical term</div><div class="val">5 – 10 yr</div><div class="sub">Amortizing.</div></div>
+    <div class="stat"><div class="label">Lien priority</div><div class="val">Statutory</div><div class="sub">Same as monthly dues.</div></div>
+    <div class="stat"><div class="label">Stage</div><div class="val">Pre-launch</div><div class="sub">Specialty private credit fund.</div></div>
+  </div>
+</section>
+
+<section class="s" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>How it works.</h2>
+      <p>An association needs a capital project done. Norm underwrites the loan against the association's statutory assessment authority. Residents pay monthly, on top of dues, over the life of the loan.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>The board votes the project</h3>
+        <p>Façade, roof, mechanicals, life-safety. The board approves scope and selects a contractor. Norm doesn't pick the work.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Norm underwrites the loan</h3>
+        <p>We review the engineering report, the operating budget, and arrears history. We respond within a week. Plain term sheet.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Residents pay monthly</h3>
+        <p>The association adds the loan payment to monthly dues. Same lien priority that makes dues collectible. No special assessment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="example">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Illustrative — not a real origination</div>
+      <h2>How a Norm loan looks.</h2>
+      <p>A 12-unit Chicago condo association needs to replace its boiler. Special-assessing the building would cost each owner about $6,700 up front. With a Norm loan, that same project costs each owner roughly $140 a month for five years.</p>
+    </div>
+    <div class="deal-table" style="max-width: 720px">
+      <table>
+        <thead><tr><th>Project</th><th>Units</th><th class="num">Principal</th><th class="num">Term</th><th class="num">Rate</th></tr></thead>
+        <tbody>
+          <tr><td>Boiler replacement</td><td>12</td><td class="num">$80,000</td><td class="num">60 mo</td><td class="num">9.50%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="faq">
+  <div class="container">
+    <div class="section-head" style="margin: 0 auto 48px; text-align:center;">
+      <div class="eyebrow">FAQ</div>
+      <h2 style="margin-top: 8px">Plain answers.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>How is a Norm loan different from a bank loan?</summary>
+        <p>Most banks find sub-$1M loans inefficient — the file work is the same as a $10M deal. We've built a process specifically for $25K–$250K loans against association assessment authority. We also don't require personal guarantees from board members.</p>
+      </details>
+      <details>
+        <summary>What's the lien priority?</summary>
+        <p>Loans are secured by the association's statutory authority to levy assessments — the same authority that makes monthly dues collectible. In Illinois, six months of unpaid assessments sit ahead of the first mortgage; Massachusetts and Connecticut have similar but not identical priority structures.</p>
+      </details>
+      <details>
+        <summary>Do residents have to vote?</summary>
+        <p>Depends on your governing documents. Most boards have authority to incur debt up to a stated cap without a unit-owner vote. We'll review your bylaws as part of the underwrite.</p>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <p>We typically respond within a week. Closing timing depends on the engineering report and lien certificate — usually four to six weeks once the file is complete.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="container cta-inner">
+    <div>
+      <div class="eyebrow">Talk to us</div>
+      <h2>Tell us about the project.</h2>
+      <p>We'll respond within a week. No deck required, no NDA.</p>
+      <p style="font-size: 14px; color: var(--fg-subtle)">Or email <a href="mailto:hello@norm.fi" style="color: var(--sage-400)">hello@norm.fi</a>.</p>
+    </div>
+    <form class="cta-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+      <div class="field"><label>Association name</label><input name="association_name" placeholder="Sample Condo Assn." required></div>
+      <div class="row">
+        <div class="field"><label>Units</label><input type="number" name="units" placeholder="12"></div>
+        <div class="field"><label>Project type</label>
+          <select name="project_type"><option>Roof</option><option>Boiler / mechanical</option><option>Tuckpointing / façade</option><option>Elevator</option><option>Life-safety</option><option>Other</option></select>
+        </div>
+      </div>
+      <div class="field"><label>Estimated cost</label><input name="estimated_cost" placeholder="$80,000"></div>
+      <div class="field"><label>Your email</label><input type="email" name="email" placeholder="board@example.org" required></div>
+      <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div class="brand">
+        <img src="./assets/logo-wordmark-dark.svg" alt="Norm" style="height: 28px">
+        <p>Specialty private credit for the buildings people live in. Pre-launch fund, based in Chicago.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul><li><a href="#how">How it works</a></li><li><a href="#example">Example loan</a></li><li><a href="#cta">Talk to us</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="mailto:hello@norm.fi">hello@norm.fi</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Norm Capital [ENTITY TBD]</span>
+      <span>Securities offered through registered broker-dealer. Not an offer to sell securities.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

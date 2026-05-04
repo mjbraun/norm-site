@@ -1,0 +1,273 @@
+/* ============================================================
+   Norm Capital — Foundations
+   Colors + Type tokens. Import this file from any artifact.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Color: Warm neutrals (the canvas) ---------- */
+  --cream-50:  #FBF7F1;   /* page background, warmest */
+  --cream-100: #F6F1E8;   /* card / panel surface */
+  --cream-200: #EFE7D8;   /* hairline / divider on cream */
+  --cream-300: #E2D6C0;   /* muted surface, hover */
+  --cream-400: #C9B89C;
+
+  /* ---------- Color: Ink (primary text + dark surfaces) ---------- */
+  --ink-50:  #6B6657;
+  --ink-100: #4A4538;
+  --ink-200: #332F25;
+  --ink-300: #211E17;     /* primary ink — body text on cream */
+  --ink-400: #15130E;     /* deepest, headlines */
+
+  /* ---------- Color: Sage (the accent) ---------- */
+  --sage-50:  #EFF1EA;
+  --sage-100: #D9DEC9;
+  --sage-200: #B6C09A;
+  --sage-300: #8B9970;
+  --sage-400: #5F6E48;     /* primary sage — buttons, links */
+  --sage-500: #44512F;     /* hover / pressed */
+  --sage-600: #2E371F;
+
+  /* ---------- Color: Terracotta (secondary, used sparingly) ---------- */
+  --terra-50:  #F7EBE2;
+  --terra-100: #EBCDB8;
+  --terra-200: #D89D7C;
+  --terra-300: #B46B49;     /* primary terracotta */
+  --terra-400: #8A4D32;
+  --terra-500: #5C3320;
+
+  /* ---------- Color: Soft blue (informational, charts) ---------- */
+  --blue-50:  #E8EEF1;
+  --blue-100: #C7D5DD;
+  --blue-200: #8EA9B7;
+  --blue-300: #5C7E8F;
+  --blue-400: #3C5C6C;
+
+  /* ---------- Semantic colors ---------- */
+  --bg:           var(--cream-50);
+  --bg-elevated:  #FFFCF6;
+  --bg-panel:     var(--cream-100);
+  --bg-muted:     var(--cream-200);
+  --bg-inverted:  var(--ink-300);
+
+  --fg:           var(--ink-300);
+  --fg-strong:    var(--ink-400);
+  --fg-muted:     var(--ink-100);
+  --fg-subtle:    var(--ink-50);
+  --fg-on-dark:   var(--cream-50);
+
+  --border:        #E2D6C0;
+  --border-strong: #C9B89C;
+  --border-subtle: #EFE7D8;
+
+  --accent:        var(--sage-400);
+  --accent-hover:  var(--sage-500);
+  --accent-soft:   var(--sage-50);
+  --accent-fg:     #FFFFFF;
+
+  --secondary:        var(--terra-300);
+  --secondary-hover:  var(--terra-400);
+  --secondary-soft:   var(--terra-50);
+
+  --info:    var(--blue-300);
+  --info-soft: var(--blue-50);
+  --success: var(--sage-500);
+  --warning: #8A6B2E;     /* a quiet ochre, not gold */
+  --warning-soft: #EFE5D0;
+  --danger:  #A53A2A;
+  --danger-soft: #F5E2DC;
+
+  /* ---------- Typography ---------- */
+  --font-sans:    "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif:   "Newsreader", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-display: var(--font-serif); /* editorial serif for display */
+
+  /* Type scale — modular, calm. Body 16px base. */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   21px;
+  --text-xl:   26px;
+  --text-2xl:  32px;
+  --text-3xl:  42px;
+  --text-4xl:  56px;
+  --text-5xl:  72px;
+  --text-6xl:  96px;
+
+  --leading-tight:  1.1;
+  --leading-snug:   1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-snug:   -0.01em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.04em;
+  --tracking-caps:   0.08em;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold:    700;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---------- Radii — gentle, not pill-shaped ---------- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-2xl: 20px;
+  --radius-full: 999px;
+
+  /* ---------- Shadows — soft, warm-tinted ---------- */
+  --shadow-xs: 0 1px 2px rgba(33, 30, 23, 0.04);
+  --shadow-sm: 0 1px 3px rgba(33, 30, 23, 0.06), 0 1px 2px rgba(33, 30, 23, 0.04);
+  --shadow-md: 0 4px 12px rgba(33, 30, 23, 0.06), 0 2px 4px rgba(33, 30, 23, 0.04);
+  --shadow-lg: 0 12px 32px rgba(33, 30, 23, 0.08), 0 4px 8px rgba(33, 30, 23, 0.04);
+  --shadow-xl: 0 24px 48px rgba(33, 30, 23, 0.10), 0 8px 16px rgba(33, 30, 23, 0.05);
+  --shadow-inset: inset 0 1px 0 rgba(255, 252, 246, 0.6), inset 0 -1px 0 rgba(33, 30, 23, 0.04);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 360ms;
+
+  /* ---------- Layout ---------- */
+  --max-content: 1200px;
+  --max-prose:   68ch;
+  --gutter:      24px;
+}
+
+/* ============================================================
+   Element-level styles (semantic defaults)
+   Apply these by tagging or by using the class equivalents.
+   ============================================================ */
+
+html { background: var(--bg); color: var(--fg); }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--fg);
+  background: var(--bg);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-strong);
+  font-variation-settings: "opsz" 60;
+  text-wrap: balance;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-strong);
+  font-variation-settings: "opsz" 36;
+  text-wrap: balance;
+}
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-strong);
+}
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+  color: var(--fg-strong);
+}
+
+p, .p {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.lede, .lead {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-strong);
+  font-variation-settings: "opsz" 18;
+}
+
+.eyebrow, .overline {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--fg-subtle);
+}
+
+small, .small, .caption {
+  font-size: var(--text-sm);
+  color: var(--fg-muted);
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklab, var(--accent) 40%, transparent);
+  transition: text-decoration-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+a:hover {
+  text-decoration-color: var(--accent);
+  color: var(--accent-hover);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: var(--space-8) 0;
+}
+
+::selection {
+  background: var(--sage-100);
+  color: var(--ink-400);
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Roof and chimney">
+  <rect width="600" height="400" fill="#F6F1E8"></rect>
+  
+  <line x1="0" y1="320" x2="600" y2="320" stroke="#211E17" stroke-width="1.2"></line>
+  
+  <polygon points="120,320 120,200 300,90 480,200 480,320" fill="none" stroke="#211E17" stroke-width="1.2"></polygon>
+  
+  <polygon points="120,200 300,90 480,200 300,200" fill="#B46B49" opacity="0.85"></polygon>
+  
+  <g stroke="#FBF7F1" stroke-width="0.8" opacity="0.6">
+    <line x1="160" y1="178" x2="440" y2="178"></line>
+    <line x1="180" y1="158" x2="420" y2="158"></line>
+    <line x1="200" y1="138" x2="400" y2="138"></line>
+    <line x1="220" y1="118" x2="380" y2="118"></line>
+  </g>
+  
+  <rect x="380" y="120" width="34" height="80" fill="#FFFCF6" stroke="#211E17" stroke-width="1.2"></rect>
+  <line x1="376" y1="120" x2="418" y2="120" stroke="#211E17" stroke-width="1.4"></line>
+  
+  <circle cx="300" cy="220" r="22" fill="#FFFCF6" stroke="#211E17" stroke-width="1.2"></circle>
+  <line x1="278" y1="220" x2="322" y2="220" stroke="#211E17" stroke-width="0.8"></line>
+  <line x1="300" y1="198" x2="300" y2="242" stroke="#211E17" stroke-width="0.8"></line>
+  
+  <rect x="180" y="240" width="50" height="60" fill="#FFFCF6" stroke="#211E17" stroke-width="1"></rect>
+  <rect x="370" y="240" width="50" height="60" fill="#FFFCF6" stroke="#211E17" stroke-width="1"></rect>
+  <line x1="180" y1="270" x2="230" y2="270" stroke="#211E17" stroke-width="0.5"></line>
+  <line x1="205" y1="240" x2="205" y2="300" stroke="#211E17" stroke-width="0.5"></line>
+  <line x1="370" y1="270" x2="420" y2="270" stroke="#211E17" stroke-width="0.5"></line>
+  <line x1="395" y1="240" x2="395" y2="300" stroke="#211E17" stroke-width="0.5"></line>
+  
+  <rect x="280" y="250" width="40" height="70" fill="#5F6E48" stroke="#211E17" stroke-width="1"></rect>
+  <circle cx="312" cy="285" r="1.6" fill="#FBF7F1"></circle>
+</svg>

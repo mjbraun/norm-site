@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Pre-war condominium building">
+  <rect width="600" height="400" fill="#F6F1E8"></rect>
+  
+  <line x1="0" y1="370" x2="600" y2="370" stroke="#211E17" stroke-width="1.2"></line>
+  
+  <rect x="120" y="80" width="360" height="290" fill="none" stroke="#211E17" stroke-width="1.2"></rect>
+  
+  <line x1="110" y1="92" x2="490" y2="92" stroke="#211E17" stroke-width="1.2"></line>
+  <line x1="110" y1="98" x2="490" y2="98" stroke="#211E17" stroke-width="1.2"></line>
+  
+  <line x1="120" y1="180" x2="480" y2="180" stroke="#211E17" stroke-width="0.8"></line>
+  <line x1="120" y1="280" x2="480" y2="280" stroke="#211E17" stroke-width="0.8"></line>
+  
+  <g stroke="#211E17" stroke-width="0.9" fill="#FBF7F1">
+    
+    <rect x="148" y="115" width="40" height="50"></rect>
+    <rect x="212" y="115" width="40" height="50"></rect>
+    <rect x="276" y="115" width="40" height="50"></rect>
+    <rect x="340" y="115" width="40" height="50"></rect>
+    <rect x="404" y="115" width="40" height="50"></rect>
+    
+    <rect x="148" y="200" width="40" height="60"></rect>
+    <rect x="212" y="200" width="40" height="60"></rect>
+    <rect x="276" y="200" width="40" height="60"></rect>
+    <rect x="340" y="200" width="40" height="60"></rect>
+    <rect x="404" y="200" width="40" height="60"></rect>
+    
+    <rect x="148" y="295" width="40" height="60"></rect>
+    <rect x="212" y="295" width="40" height="60"></rect>
+    <rect x="340" y="295" width="40" height="60"></rect>
+    <rect x="404" y="295" width="40" height="60"></rect>
+  </g>
+  
+  <g stroke="#211E17" stroke-width="0.5">
+    <line x1="148" y1="140" x2="188" y2="140"></line>
+    <line x1="168" y1="115" x2="168" y2="165"></line>
+    <line x1="212" y1="140" x2="252" y2="140"></line>
+    <line x1="232" y1="115" x2="232" y2="165"></line>
+    <line x1="276" y1="140" x2="316" y2="140"></line>
+    <line x1="296" y1="115" x2="296" y2="165"></line>
+    <line x1="340" y1="140" x2="380" y2="140"></line>
+    <line x1="360" y1="115" x2="360" y2="165"></line>
+    <line x1="404" y1="140" x2="444" y2="140"></line>
+    <line x1="424" y1="115" x2="424" y2="165"></line>
+  </g>
+  
+  <rect x="276" y="295" width="40" height="75" fill="none" stroke="#211E17" stroke-width="1.2"></rect>
+  <line x1="296" y1="295" x2="296" y2="370" stroke="#211E17" stroke-width="0.6"></line>
+  
+  <path d="M 268 295 L 324 295 L 320 285 L 272 285 Z" fill="#5F6E48" stroke="#211E17" stroke-width="0.8"></path>
+  
+  <line x1="270" y1="370" x2="322" y2="370" stroke="#211E17" stroke-width="2"></line>
+  
+  <rect x="180" y="55" width="22" height="30" fill="none" stroke="#211E17" stroke-width="1"></rect>
+  
+  <rect x="148" y="261" width="40" height="6" fill="#5F6E48"></rect>
+  <rect x="404" y="261" width="40" height="6" fill="#5F6E48"></rect>
+  
+  <circle cx="540" cy="80" r="14" fill="#B46B49" opacity="0.85"></circle>
+</svg>
